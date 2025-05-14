@@ -1,97 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: url('https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-            background-size: cover;
-        }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-    </style>
-    <title>Dashboard - Parking Management</title>
-</head>
-<body class="min-h-screen bg-gray-900 bg-opacity-75">
-    <!-- Admin info and logout -->
-    <div class="absolute top-4 right-4 flex items-center space-x-4 glass-effect px-4 py-2 rounded-lg">
-        <span class="text-gray-700">Welcome, {{ admin_name }}!</span>
-        <a href="{{ url_for('logout') }}" class="px-4 py-2 bg-red-400 text-white rounded-lg hover:bg-red-600 transition duration-200">
-            <i class="fas fa-sign-out-alt mr-2"></i>Logout
-        </a>
-    </div>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your YouTube Showcase</title>
+        <style>
+            header {
+                background-color: #ff0000; /* Customize with your channel's color */
+                color: #ffffff;
+                text-align: center;
+                padding: 2rem;
+            }
+            /* Reset some default styles */
+            body, h1, p {
+                margin: 0;
+                padding: 0;
+            }
 
-    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div class="w-full max-w-4xl">
-            <div class="glass-effect rounded-2xl shadow-2xl p-8">
-                <!-- Header -->
-                <div class="text-center border-b border-gray-200 pb-8 mb-8">
-                    <h1 class="text-4xl font-bold text-gray-800">Parking Management System</h1>
-                    <p class="mt-2 text-gray-600">Manage your parking facility efficiently</p>
+            /* Set a background color or image */
+            body {
+                background-color: #f5f5f5;
+                font-family: Arial, sans-serif;
+            }
+
+            /* Center align content */
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem;
+                text-align: center;
+            }
+
+            .video-container, .playlist-container, .shorts-container {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .video, .playlist, .short {
+                flex: 1;
+                border: 1px solid #ddd;
+                padding: 1rem;
+                background-color: #ffffff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            /* Footer section */
+            footer {
+                text-align: center;
+                padding: 1rem;
+                background-color: #333;
+                color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>DheerajTechInsight</h1>
+            <p class="channel-description">Welcome to my channel!! Subscribe for awesome content.</p>
+        </header>
+        <div class="container">
+            <h1>Popular Videos</h1>
+            <br>
+            <!-- Popular YouTube Videos -->
+            <div class="video-container">
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/trFW03zP7Uw?si=9cXiME0hC3dwH6mi" frameborder="0" allowfullscreen></iframe>
                 </div>
-
-                <!-- Flash Messages -->
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            <div class="mb-6 p-4 rounded-lg {% if category == 'error' %}bg-red-100 text-red-700{% else %}bg-green-100 text-green-700{% endif %}">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-
-                <!-- Info Section -->
-                <div class="bg-blue-50 p-6 rounded-xl shadow-sm mb-8">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="text-center">
-                            <p class="text-lg text-gray-600">Available Spaces</p>
-                            <p class="text-3xl font-bold text-blue-600">{{ available_spaces }}</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-lg text-gray-600">Total Capacity</p>
-                            <p class="text-3xl font-bold text-blue-600">{{ total_capacity }}</p>
-                        </div>
-                    </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8CeaPSB3TMY?si=_qFWuKwqgmGLOar8" frameborder="0" allowfullscreen></iframe>
                 </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/M1qVScFHj3A?si=e6YOrKymZVgYSsaO" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
 
-                <!-- Action Buttons -->
-                <div class="grid grid-cols-2 gap-6">
-                    <a href="{{ url_for('add_vehicle') }}" class="flex items-center justify-center p-6 bg-green-500 text-white rounded-xl hover:bg-green-600 transition duration-150 group">
-                        <div class="text-center">
-                            <i class="fas fa-car text-3xl mb-2"></i>
-                            <p class="text-lg font-semibold">Add Vehicle</p>
-                        </div>
-                    </a>
+            <!-- Popular YouTube Playlists -->
+            <br>
+            <h1>Popular Playlists</h1>
+            <br>
+            <div class="playlist-container">
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=YLd39R6zYB6a7VuV&amp;list=PLz8JBMMd7yjWMJ0YeOkfnTohirAZT_pBU" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=pmR7Ep3IH_M1UkO7&amp;list=PLz8JBMMd7yjUukUG1M78ypP9GjWaP8rqf" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=m707kduCb5UYnUmV&amp;list=PLz8JBMMd7yjWA5qpXSVAcbi-_u9n6d7uw" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
 
-                    <a href="{{ url_for('check_out_vehicle') }}" class="flex items-center justify-center p-6 bg-yellow-500 text-white rounded-xl hover:bg-yellow-600 transition duration-150 group">
-                        <div class="text-center">
-                            <i class="fas fa-sign-out-alt text-3xl mb-2"></i>
-                            <p class="text-lg font-semibold">Check Out Vehicle</p>
-                        </div>
-                    </a>
-
-                    <a href="{{ url_for('create_admin') }}" class="flex items-center justify-center p-6 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition duration-150 group">
-                        <div class="text-center">
-                            <i class="fas fa-user-plus text-3xl mb-2"></i>
-                            <p class="text-lg font-semibold">Create Admin</p>
-                        </div>
-                    </a>
-
-                    <a href="{{ url_for('generate_report') }}" class="flex items-center justify-center p-6 bg-purple-500 text-white rounded-xl hover:bg-purple-600 transition duration-150 group">
-                        <div class="text-center">
-                            <i class="fas fa-chart-bar text-3xl mb-2"></i>
-                            <p class="text-lg font-semibold">Generate Report</p>
-                        </div>
-                    </a>
+            <!-- Popular YouTube Shorts -->
+            <br>
+            <h1>Popular Shorts</h1>
+            <br>
+            <div class="shorts-container">
+                <div class="short">
+                    <iframe width="315" height="560" src="https://youtube.com/embed/73toBt5R4zE?si=4iMebKKwOPyoUcYR" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="short">
+                    <iframe width="315" height="560" src="https://youtube.com/embed/L75o4sa7iXQ?si=tJv6_90r3CINw6uW" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="short">
+                    <iframe width="315" height="560" src="https://youtube.com/embed/LKysazmlDxk?si=MYycCA2N1tNzNoUH" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="short">
+                    <iframe width="315" height="560" src="https://youtube.com/embed/4OfEN3XGcic?si=10IE-7djtqcZuHnn" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="short">
+                    <iframe width="315" height="560" src="https://youtube.com/embed/AgGPGujpJCo?si=TVZ5CmamRWv5NPXa" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+        <footer>
+            ©️ 2024 DheerajTechInsight | All rights reserved
+        </footer>
+    </body>
+    </html>
