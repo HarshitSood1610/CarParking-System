@@ -8,6 +8,6 @@ ADD admin_login.html /var/www/html
 ADD check_out_vehicle.html /var/www/html
 ADD create_admin.html /var/www/html
 ADD generate_report.html /var/www/html
-
+ADD sys.py /var/www/py
 ENTRYPOINT ["apachectl", "-D", "FOREGROUND"]
 ENV name dheerajtechinsight
