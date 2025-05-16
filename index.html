@@ -43,7 +43,7 @@
                 </div>
 
                 <!-- Flash Messages -->
-                {% with messages = get_flashed_messages(with_categories=true) %}
+<!--                 {% with messages = get_flashed_messages(with_categories=true) %}
                     {% if messages %}
                         {% for category, message in messages %}
                             <div class="mb-6 p-4 rounded-lg {% if category == 'error' %}bg-red-100 text-red-700{% else %}bg-green-100 text-green-700{% endif %}">
@@ -52,17 +52,17 @@
                         {% endfor %}
                     {% endif %}
                 {% endwith %}
-
+ -->
                 <!-- Info Section -->
                 <div class="bg-blue-50 p-6 rounded-xl shadow-sm mb-8">
                     <div class="grid grid-cols-2 gap-4">
                         <div class="text-center">
                             <p class="text-lg text-gray-600">Available Spaces</p>
-                            <p class="text-3xl font-bold text-blue-600">{{ available_spaces }}</p>
+<!--                             <p class="text-3xl font-bold text-blue-600">{{ available_spaces }}</p> -->
                         </div>
                         <div class="text-center">
                             <p class="text-lg text-gray-600">Total Capacity</p>
-                            <p class="text-3xl font-bold text-blue-600">{{ total_capacity }}</p>
+<!--                             <p class="text-3xl font-bold text-blue-600">{{ total_capacity }}</p> -->
                         </div>
                     </div>
                 </div>
